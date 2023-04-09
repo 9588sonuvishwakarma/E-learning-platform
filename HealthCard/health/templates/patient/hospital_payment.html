@@ -1,0 +1,89 @@
+{% extends 'patient/sidebar.html' %}
+{% load static %}
+{% block b %}
+<div class="content">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-md-7 col-lg-8">
+							<div class="card">
+								<div class="card-body">
+{% for i in messages %}
+<p style="color:red">{{i}}</p>
+{% endfor %}
+
+									<!-- Checkout Form -->
+									<form action="" method="post">
+
+										{% csrf_token %}<!-- Personal Information -->
+										<div class="info-widget">
+											<h4 class="card-title">Personal Information</h4>
+											<div class="row">
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group card-label">
+														<label>First Name</label>
+														<input class="form-control" type="text">
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group card-label">
+														<label>Last Name</label>
+														<input class="form-control" type="text">
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group card-label">
+														<label>Email</label>
+														<input class="form-control" type="email">
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group card-label">
+														<label>Phone</label>
+														<input class="form-control" type="text">
+													</div>
+												</div>
+											</div>
+											
+
+											<!-- Submit Section -->
+											<div class="submit-section mt-4">
+												<button type="submit" class="btn btn-primary submit-btn">Confirm</button>
+											</div>
+											<!-- /Submit Section -->
+
+										</div>
+									</form>
+									<!-- /Checkout Form -->
+
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-5 col-lg-4 theiaStickySidebar">
+
+							<!-- Booking Summary -->
+							
+									<!-- Booking Doctor Info -->
+
+									<div class="booking-summary">
+										<div class="booking-item-wrap">
+											<ul class="booking-date">
+												<li>Date <span>{{data.a_date}}</span></li>
+
+											</ul>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Booking Summary -->
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+{% endblock %}
